@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+<head>
+    <title></title>
+    <link href="../youthalive/css/joshua.css" rel="stylesheet" />
+    <link href="../youthalive/css/w3.css" rel="stylesheet" />
+    <link href="../youthalive/css/responsive.css" rel="stylesheet" />
+    <link href="../youthalive/css/admin-responsive.css" rel="stylesheet" />
+    <link href="responsive-column.css" rel="stylesheet" />
+    <link href="../youthalive/css/John.css" rel="stylesheet" />
+    <link href="../youthalive/fa/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="appml.js"></script>
+    <script src="functions.js"></script>
+    <script src="function.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            background-color: transparent;
+        }
+
+        
+
+    </style>
+</head>
+<body style="background-color: transparent;" onload="makePageEditable()">
+    <nav>
+        <ul class="navbar w3-top w3-black ar-big-nav" appml-data="json/menu.json">
+        	<li class="nav"><a href="{{link}}" class="" appml-repeat="menu">{{name}}</a></li>
+        </ul>
+    </nav>
+    <header class="parallax" style="background-image: url('images/RE1h8ma.jpg'); padding: 24px;" id="parlx">
+        <div class="edit-region">
+            <div class="edit-btn-bottom">
+                <a href="image_upload_system.php" target="iframe" style="display: block; width: 100%; height: 100%">
+                    <i class="fa fa-pencil-square-o w3-round w3-blue w3-padding-tiny" onclick="unHide('modal_one'); setImage()">
+                    </i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="w3-hover-shadow" style="display: flex; background-color: transparent;">
+        <div class="" style="">
+
+
+            <div class="w3-white" style="position: relative; padding: 4px;">
+                <div class="edit-region">
+                    <div class="edit-btn-top">
+                        <i class="edit-btn fa fa-pencil-square-o w3-round w3-blue w3-padding-tiny" onclick="makeEditable('post-title')"></i>
+                    </div>
+                    <div class="editable" onblur="makeUnEditable('post-title')" id="post-title">
+                        <h1 class="w3-margin-0 w3-padding-large">Thank you Heavenly Father</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-white" style="position: relative; padding: 4px;">
+                <div class="edit-region">
+                    <div class="edit-btn-top">
+                        <i class="edit-btn fa fa-pencil-square-o w3-round w3-blue w3-padding-tiny" onclick="makeEditable('content')"></i>
+                    </div>
+                    <div class="editable" onblur="makeUnEditable('content')" id="content">
+                        <p class="w3-margin-0 w3-padding-large lar-col" style="">For your Love sake, father I will worship  you everyday</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="w3-padding-8" style="display: flex; justify-content: center;">
+        <div class="w3-padding-small w3-blue">
+            <i class="edit-btn fa fa-arrow-circle-up fa-2x" onclick="sendIntoPages()"></i>
+        </div>
+    </div>
+
+	<div style="position: fixed; top: 0; z-index: 1; width: 100%; padding: 124px; display: none; justify-content: center;" id="modal_one">
+		<div class="w3-white" style="align-self: center; display: flex; justify-content: center; width: 100%; height: 200px;">
+			<iframe width="75%" height="100%" name="iframe" id="i_frame" frameborder="0"></iframe>
+		</div>
+	</div>
+	
+</body>
+</html>

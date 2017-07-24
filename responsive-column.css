@@ -1,0 +1,24 @@
+@media only screen and (min-width: 961px) {
+	.lar-col {
+		column-count: 3;
+		column-gap: 48px;
+		column-rule: 1px solid lightgrey;
+	}
+}
+
+
+@media only screen and (max-width: 960px) {
+	.lar-col {
+		column-count: 2;
+		column-gap: 36px;
+		column-rule: 1px solid lightgrey;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.lar-col {
+		column-count: 1;
+		column-gap: 48px;
+		column-rule: 1px solid lightgrey;
+	}
+}
