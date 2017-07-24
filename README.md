@@ -1,2 +1,2 @@
 # Opinion
-Magazine Website
+A News Magazine Website
