@@ -1,0 +1,79 @@
+@import url('animations.css');
+
+.nav {
+    display: flex;
+}
+
+.nav li {
+    display: inline;
+    list-style-type: none;
+    padding: 16px 32px;
+}
+
+.nav li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.nav li a {
+    display: block;
+    text-decoration: none;
+}
+
+.menu {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 3;
+}
+
+.menu h3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul {
+    width: 100%;
+    display: block;
+}
+
+.menu ul li {
+    display: block;
+    list-style-type: none;
+    padding: 8px 0px;
+    overflow: hidden;
+    cursor: pointer;
+    color: darkgray;
+}
+
+.menu ul li a {
+    text-decoration: none;
+}
+
+.menu ul li:hover {
+    background-color: darkgray;
+    color: white;
+}
+
+.circle-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    margin: 16px 0;
+}
+
+.circle-img a {
+    text-decoration: none;
+}
+
+#title {
+    display: flex;
+}

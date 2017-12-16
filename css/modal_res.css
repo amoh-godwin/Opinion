@@ -1,0 +1,223 @@
+#modal, .modal-nav, .nav-lining, .modal-button {}
+
+@media only screen and (min-width: 961px) {
+    #modal {
+    }
+    .modal-nav {
+        height: 100% !important;
+    }
+    .nav-lining {
+        height: 100%;
+        background: linear-gradient(45deg, rgba(255,255,255, 0.2), rgba(255,255,255, 0.0));
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .nav-lining div {
+        width: 100% !important;
+    }
+
+    .modal-button {
+        height: 40px;
+        width: 100%;
+        opacity: 0.9;
+        color: #555;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .modal-button a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .modal-button:active {
+        border-left: 4px solid dodgerblue;
+    }
+
+    .modal-button:visited {
+        border-left: 4px solid dodgerblue;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    #modal {
+    }
+    .modal-nav {
+        height: 100% !important;
+    }
+    .nav-lining {
+        height: 100%;
+        background: linear-gradient(45deg, rgba(255,255,255, 0.2), rgba(255,255,255, 0.0));
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .nav-lining div {
+        width: 100% !important;
+    }
+
+    .modal-button {
+        height: 40px;
+        width: 100%;
+        opacity: 0.9;
+        color: #555;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .modal-button a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .modal-button:active {
+        border-left: 4px solid dodgerblue;
+    }
+
+    .modal-button:visited {
+        border-left: 4px solid dodgerblue;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #modal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .modal-nav {
+        height:auto !important;
+        width: 100% !important;
+    }
+    .nav-lining {
+        height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: center;
+    }
+
+    .nav-lining div {
+        width: 100% !important;
+    }
+
+    .modal-button {
+        height: 40px;
+        width: 100%;
+        opacity: 0.9;
+        color: #555;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .modal-button a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .modal-button:active {
+        border-left: none;
+        border-bottom: 4px solid dodgerblue;
+    }
+
+    .modal-button:visited {
+        border-left: none;
+        border-bottom: 4px solid dodgerblue;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #modal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .modal-nav {
+        height: auto !important;
+        width: 100% !important;
+    }
+    .nav-lining {
+        height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: center;
+    }
+
+    .nav-lining div {
+        width: 100% !important;
+    }
+
+    .modal-button {
+        height: 40px;
+        width: 100%;
+        opacity: 0.9;
+        color: #555;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .modal-button a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .modal-button:active {
+        border-left: none;
+        border-bottom: 4px solid dodgerblue;
+    }
+
+    .modal-button:visited {
+        border-left: none;
+        border-bottom: 4px solid dodgerblue;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #modal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .modal-nav {
+        height: auto !important;
+        width: 100% !important;
+    }
+    .nav-lining {
+        height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: center;;
+    }
+
+    .nav-lining div {
+        width: 100% !important;
+    }
+
+    .modal-button {
+        height: 40px;
+        width: 100%;
+        opacity: 0.9;
+        color: #555;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .modal-button a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .modal-button:active {
+        border-left: none;
+        border-bottom: 4px solid dodgerblue;
+    }
+
+    .modal-button:visited {
+        border-left: none;
+        border-bottom: 4px solid dodgerblue;
+    }
+}

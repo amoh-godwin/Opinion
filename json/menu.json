@@ -1,0 +1,7 @@
+{
+	"menu": [
+		{"name": "Home", "link": "index.php"},
+		{"name": "login", "link": "login.html"},
+		{"name": "Sign on", "link": "sign_in.html"}
+	]
+}

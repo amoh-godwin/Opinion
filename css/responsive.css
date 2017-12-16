@@ -1,0 +1,92 @@
+@import url("design.css");
+/* CSS Document */
+
+.quarter,.third,.twoThird,.half,.full,.threequarter,.quarter{float:left;}
+
+@media only screen and (min-width:961px) {
+	article {padding: 24px 0 0 12px;}
+	aside {padding: 24px 0 0 0;}
+	.quarter {width:25%;!important}
+	.third {width:33.33%;!important}
+	.twoThird {width: 66.66% !important;}
+	.half {width:50%;!important}
+	.full {width:100%;!important}
+	.threequarter {width:75% !important;}
+	.quarter {width: 25% !important;}
+	.fill {width:100%; clear:both;}
+	.nDiv {height: 300px; padding: 0 12px 20px 0;}
+	.iNDiv {height: 50%;}
+	.hfull {height: 600px;}
+	}
+
+@media only screen and (max-width:960px) {
+	.quarter {width:33.33%;!important}
+	.third {width:50%;!important}
+	.twoThird {width: 100% !important;}
+	.half {width:50%;!important}
+	.full {width:100%;!important}
+	.threequarter {width:75% !important;}
+	.quarter {width: 25% !important;}
+	.fill {width:100%; clear:both;}
+	.nDiv {
+		height: 300px;
+		}
+	.iNDiv {
+		height: 50%;
+		}
+	.hfull {height: 540px;}
+	}
+
+@media only screen and (max-width:800px) {
+	.quarter {width:33.33%;!important}
+	.twoThird {width: 100% !important;}
+	.third {width:50%;!important}
+	.half {width:100%;!important}
+	.full {width:100%;!important}
+	.threequarter {width:66.66% !important;}
+	.quarter {width: 33.33% !important;}
+	.fill {width:100%; clear:both;}
+	.nDiv {
+		height: 300px;
+		}
+	.iNDiv {
+		height: 50%;
+		}
+	.hfull {height: 440px;}
+	}
+
+@media only screen and (max-width:600px) {
+	.quarter {width:33.33%;!important}
+	.third {width:50%;!important}
+	.twoThird {width: 100% !important;}
+	.half {width:100%;!important}
+	.full {width:100%;!important}
+	.threequarter {width:100% !important;}
+	.quarter {width:100% !important;}
+	.fill {width:100%; clear:both;}
+	.nDiv {
+		height: 300px;
+		}
+	.iNDiv {
+		height: 50%;
+		}
+	.hfull {height: 100%;}
+	}
+
+@media only screen and (max-width:360px) {
+	.quarter {width:50%;!important}
+	.twoThird {width: 100% !important;}
+	.third {width:100%;!important}
+	.half {width:100%;!important}
+	.full {width:100%;!important}
+	.threequarter {width:100% !important;}
+	.quarter {width: 100% !important;}
+	.fill {width:100%; clear:both;}
+	.nDiv {
+		height: 300px;
+		}
+	.iNDiv {
+		height: 50%;
+		}
+	.hfull {height: 100%;}
+	}

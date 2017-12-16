@@ -11,7 +11,5 @@ $pass = "ampofo1";
 $db_name = "design";
 
 if($conn = new mysqli($host, $user, $pass, $db_name)) {
-
 } else {
-
 }

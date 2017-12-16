@@ -97,10 +97,9 @@ function sendIntoPages() {
     *****************/
     var title = "";
     var message = "";
-    var img_url = "";
+    //var img_url = "";
     var h_ones = document.getElementsByTagName('h1');
     var ps = document.getElementsByTagName('p');
-    var imgs = document.getElementsByTagName('header');
 
     for(var i = 0; i < h_ones.length; i++) {
         title += h_ones[i].innerHTML;
@@ -109,40 +108,140 @@ function sendIntoPages() {
         message += ps[j].innerHTML;
     }
 
-    for(var k = 0; k < imgs.length; k++) {
-        if(imgs[k]) {
-            img_url += imgs[k].style.backgroundImage;
-        }
-    }
-
-    var img_eef1 = img_url.replace('url("', '');
-    var img_href = img_eef1.replace('")', '');
-
 
     /*********************
     **     Ajax Call     *
     *********************/
 
     var ajax = new XMLHttpRequest();
-    ajax.open( "POST", "http://localhost/design/create_post.php?page=about_us", true);
+    ajax.open( "POST", "create_post.php?page=about_us", true);
     ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     ajax.onreadystatechange = function() {
         if(ajax.readyState == 4 && ajax.status == 200) {
             var response = ajax.responseText;
             var values = response.split(";");
             var new_title = values[0];
-            var new_image = values[1];
             var new_message = values[2];
             title = new_title;
             message = new_message;
-            img_href = new_image;
+
+            if(response == 'love God') {
+                alert('Thank you Father, Done Inserting!');
+            } else {
+                alert(response);
+            }
         }
     };
 
 
-    ajax.send("title="+title+"&message="+message+"&img_src="+img_href);
-    alert(title);
-    alert(message);
-    alert(img_href);
-    alert('Thank you Father: Done');
+    ajax.send("title="+title+"&message="+message);
+}
+
+function cookies(str) {
+    var cookies = document.cookie;
+    var entries = {};
+
+    if(cookies.search(';') !== -1) { // Multiple instance;
+
+        var cookies_list = cookies.split('; ');
+
+        for (var i = 0; i<cookies_list.length; i++) {
+
+            if( i === 0) {
+                var sandbox_entries = cookies_list[i].split('=');
+                var keyName = sandbox_entries[0];
+                var value = sandbox_entries[1];
+                entries[keyName] = eval('{' + keyName + ':' + '"' + value + '"' + '}');
+            } else {
+                var sandbox_entries1 = cookies_list[i].split('=');
+                var keyName1 = sandbox_entries1[0];
+                var value1 = sandbox_entries1[1];
+                entries[keyName1] = eval('{' + keyName1 + ':' + '"' + value1 + '"' + '}');
+            }
+        }
+
+    } else { // Single instance;
+
+        var cookies_list1 = cookies.split('=');
+        var keyName2 = cookies_list1[0];
+        var value2 = cookies_list1[1];
+        entries[keyName2] = eval('{' + keyName2 + ':' + '"' + value2 + '"' + '}');
+
+    }
+
+    return entries[str];
+}
+
+function stage() {
+
+    var first_stage = document.getElementById('username');
+    var second_stage = document.getElementById('password');
+    var user_img = document.getElementById('user_img');
+    var user_f_img = document.getElementById('user_f_img');
+    var user_f_name = document.getElementById('user_f_name');
+    var refer = document.getElementById('refer');
+    var user = cookies('username');
+
+    if(cookies('user') !== undefined) {
+
+        first_stage.style.display = "none";
+        second_stage.style.display = "block";
+
+        if(cookies('pass_error') !== undefined) {
+            var pass_error = document.getElementById('pass_error');
+            var hint = document.getElementById('hint');
+
+            second_stage.style.borderBottom = "2px solid crimson";
+            pass_error.style.display = "block";
+            var list = '';
+
+            for(var i = 0; i < cookies('pass_error') - 2 ; i++) {
+                list += '&#8226;';
+            }
+
+            list += cookies('stwotsrd');
+
+            hint.innerHTML = list;
+        }
+
+        refer.innerHTML = 'Not ' + user;
+
+        if(cookies('user_image') !== undefined) {
+            user_f_img.style.display = 'none';
+            user_img.src = cookies('user_image');
+            user_img.style.display = 'block';
+        } else {
+            user_f_name.innerHTML = cookies('user_fake_image');
+        }
+
+    } else {
+
+        first_stage.style.display = "block";
+        second_stage.style.display = "none";
+    }
+
+}
+
+function unset(val) {
+    document.cookie = val + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    document.cookie = 'user_image=; expires=Thu, 01 Jan 1960 00:00:00 UTC; path=/';
+    document.cookie = 'pass_error=; expires=Thu, 01 Jan 1960 00:00:00 UTC; path=/';
+    document.cookie = 'stwotsrd=; expires=Thu, 01 Jan 1960 00:00:00 UTC; path=/';
+    document.cookie = 'author=; expires=Thu, 01 Jan 1960 00:00:00 UTC; path=/';
+    document.cookie = 'password_length=; expires=Thu, 01 Jan 1960 00:00:00 UTC; path=/';
+    document.cookie = 'user_fake_image=; expires=Thu, 01 Jan 1960 00:00:00 UTC; path=/';
+    document.cookie = 'username=; expires=Thu, 01 Jan 1960 00:00:00 UTC; path=/';
+    stage();
+}
+
+function confirm_pass(password, other) {
+
+    var msg = document.getElementById('msg');
+    if(password === other) {
+        msg.style.display = "none";
+    } else {
+        msg.style.display = "block";
+        msg.innerText = "Password doesn't match";
+    }
+
 }
