@@ -1,0 +1,60 @@
+@media only screen and (min-width: 961px) {
+	
+	.head-64 {
+		
+		height: 458px;
+		
+		padding-top: 64px;
+		padding-bottom: 12px;
+		padding-left: 64px;
+		padding-right: 64px;
+	}
+	
+	.main-64 {
+		padding: 12px 64px;
+	}
+	
+	.main-54 {
+		padding: 12px 54px;
+	}
+}
+
+
+@media only screen and (max-width: 481px) {
+	
+	.head-64 {
+		
+		height: 280px;
+		
+		padding-top: 64px;
+		padding-bottom: 12px;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	
+	.main-54 {
+		padding: 12px 54px;
+	}
+}
+
+@media only screen and (max-width: 321px) {
+	
+	.head-64 {
+		
+		height: 240px;
+		
+		padding-top: 64px;
+		padding-bottom: 12px;
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+	
+	
+	.main-64 {
+		padding: 12px 12px;
+	}
+	
+	.main-54 {
+		padding: 12px 24px;
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "admin_menu": [
+    {"name": "New Post", "link": "create_post.html"},
+    {"name": "View Post", "link": "view_post.php"},
+    {"name": "Permissions", "link": "permissions.php"},
+    {"name": "Account", "link": "account.php"}
+  ]
+}

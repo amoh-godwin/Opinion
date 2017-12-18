@@ -6,12 +6,10 @@
  * Time: 7:10 PM
  */
 $host = "localhost";
-$user = "root";
-$pass = "ampofo1";
-$db_name = "design";
+$user = "";
+$pass = "";
+$db_name = "";
 
 if($conn = new mysqli($host, $user, $pass, $db_name)) {
-
 } else {
-
 }

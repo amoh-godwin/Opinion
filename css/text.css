@@ -1,0 +1,15 @@
+/* Thank you Heavenly Father, for this grace and knowledge that you have shown Us
+*  Thank you so much */
+
+@import URL('love.css');
+
+h1, h2, h3, h4, h5, h6, p, li, a, span {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover, li:hover, a:hover {
+	text-overflow: inherit;
+	overflow: visible;
+}

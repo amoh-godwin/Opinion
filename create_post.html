@@ -1,0 +1,242 @@
+<!Doctype html>
+<html>
+<head>
+    <title></title>
+    <link href="css/joshua.css" rel="stylesheet" />
+    <link href="css/w3.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="css/admin-responsive.css" rel="stylesheet" />
+    <link href="css/responsive-column.css" rel="stylesheet" />
+    <link href="css/John.css" rel="stylesheet" />
+    <link href="css/fa/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/shadow.css" rel="stylesheet" />
+    <link href="css/main-nav.css" rel="stylesheet" />
+    <link href="css/modal_res.css" rel="stylesheet" />
+    <script src="appml.js"></script>
+    <script src="functions.js"></script>
+    <script src="function.js"></script>
+    <script src="own.js"></script>
+    <script src="nav.js"></script>
+    <script>
+        function load_page(nav) {
+            var navId = document.getElementById('load-nav-into-this');
+
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function() {
+              if(request.readyState == 4 && request.status == 200) {
+                  navId.innerHTML = request.response;
+              }
+            };
+
+            request.open('GET', nav, true);
+            request.send();
+        }
+
+        function modal() {
+            var target = document.getElementById('modal_container');
+            target.style.display = "flex";
+        }
+        function all() {
+            var list = document.getElementsByName('modal-target');
+            var parlx = document.getElementById('parlx');
+            var hidden = document.getElementById('hidden');
+            var temp_name = list[0].getAttribute('temp-image');
+            document.cookie = "imageName="+encodeURI(temp_name);
+            parlx.style.backgroundImage = 'url("'+temp_name+'")';
+            hidden.innerHTML = "";
+        }
+        function closeModal() {
+            document.getElementById('modal_container').style.display = 'none';
+        }
+        function onSite() {
+            var target = document.getElementById('modal_target');
+            var blocking = document.getElementById('modal_object');
+            target.style.display = "block";
+            blocking.style.display = "none";
+        }
+
+        function useDevice() {
+            var target = document.getElementById('modal_object');
+            var blocking = document.getElementById('modal_target');
+            target.style.display = "flex";
+            blocking.style.display = "none";
+        }
+    </script>
+    <style>
+        html, body {
+            height: 100%;
+            background-color: transparent;
+        }
+
+        .tt {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tt .ttt {
+            visibility: hidden;
+            width: 200px;
+            height: 250px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+
+            position: fixed;
+            z-index: 1;
+            top: 58px;
+            right: 0;
+
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .tt .ttt::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent white transparent;
+        }
+
+        .tt:hover .ttt {
+            cursor: pointer;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .shadow-highlight {
+            box-shadow: 0 0 32px 1px rgba(0,0,0,0.4);
+        }
+
+        .modal-nav {
+            height: 100%;
+            background: url("images/dot-little.png");
+            opacity: 1;
+        }
+
+        a {
+            display: block;
+        }
+
+        .modal-main {
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .upload_btn {
+            cursor: pointer;
+            color: #555;
+            width: 180px;
+            height: 85px;
+        }
+
+        .upload_btn:hover {
+            cursor: pointer;
+            color: #ccc;
+        }
+
+        .upload_btn:active  {
+            cursor: pointer;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body style="background-color: transparent;" onload="if(1) {/*checkAuthor()*/} if(2) {load_page('nav_special.php')} if(3) {makePageEditable()}">
+    <div id="load-nav-into-this">
+    </div>
+    <header class="parallax" style="background-image: url('images/RE1h8ma.jpg'); padding: 24px;" id="parlx">
+        <div class="edit-region">
+            <div class="edit-btn-bottom" style=" width: 25px; height: 25px;">
+                <i class="fa fa-pencil-square-o w3-round w3-blue w3-padding-tiny" onclick="/*setImage()*/ modal();"
+                style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; width: 100%; height: 100%;">
+                </i>
+                <!--<div style="position: absolute; top: 0; right: 0; left: 0; bottom: 0; width: 100%; height: 100%; opacity: 0;">
+                    <input type="file" id="file" onchange="getImage(event)" style="width: 100%; height: 100%;"/>
+                </div>-->
+            </div>
+        </div>
+    </header>
+
+
+    <form method="post" action="create_post.php">
+    <div class="w3-hover-shadow" style="display: flex; background-color: transparent;">
+        <div class="" style="width: 100%;">
+
+            <div class="w3-white" style="position: relative; padding: 4px;">
+                <div class="edit-region">
+                    <div class="edit-btn-top">
+                        <i class="edit-btn fa fa-pencil-square-o w3-round w3-blue w3-padding-tiny" onclick="makeEditable('post-title')"></i>
+                    </div>
+                    <div class="editable" onblur="makeUnEditable('post-title')" id="post-title">
+                        <input type="text" name="title" class="w3-margin-0 w3-border-0 w3-padding-large" style="width: 100%;" value="Thank you Heavenly Father" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-white" style="position: relative; padding: 4px;">
+                <div class="edit-region">
+                    <div class="edit-btn-top">
+                        <i class="edit-btn fa fa-pencil-square-o w3-round w3-blue w3-padding-tiny" onclick="makeEditable('content')"></i>
+                    </div>
+                    <div class="editable" onblur="makeUnEditable('content')" id="content">
+                        <textarea name="message" class="w3-margin-0 w3-border-0 w3-padding-large lar-col" style="width: 100%;">For your Love sake, father I will worship  you everyday</textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+        <div class="w3-padding-8" style="display: flex; justify-content: center;">
+            <div class="" onclick="/*sendIntoPages()*/">
+                <input type="submit" name="startPHP" value="Done" class="w3-padding-small w3-hover-opacity w3-blue" style="cursor: pointer; border:none;" />
+            </div>
+        </div>
+
+        <div>
+            <textarea id="hidden" name="hidden" style="visibility: hidden;">
+            </textarea>
+        </div>
+
+    </form>
+
+<div id="modal_container" style="position: fixed; top: 0; left: 0; z-index: 12; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; padding: 12px;">
+    <div class="half shadow-highlight" name="modal" id="modal" style="height: 50%;">
+
+        <div class="third modal-nav" style="">
+            <div class="nav-lining" style="">
+                <div class="" style="">
+                    <div class="modal-button w3-padding-medium"><a href="from_site.php" onclick="onSite();" target="modal-target"><i class="fa fa-globe w3-large"></i></a></div>
+                </div>
+                <div class="" style="">
+                    <div class="modal-button w3-padding-medium"><a href="" target="modal-target" onclick="useDevice()"><i class="fa fa-desktop w3-large"></i></a></div>
+                </div>
+                <div class="" style="">
+                    <div class="modal-button w3-padding-medium"><a onclick="closeModal();">Close</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="twoThird modal-main">
+            <iframe width="100%" height="100%" frameborder="0" name="modal-target" id="modal_target" temp-image="" data-url="" style="display: none;"></iframe>
+            <div id="modal_object" class="upload_btn" style="position: relative; display: flex; justify-content: center; align-items: center;">
+                <div class="" onclick="" style="width: 180px; height: 85px; display: flex; align-items: center;"><i class="fa fa-cloud-upload fa-4x"></i><span class="w3-xlarge w3-padding-small">Upload</span></div>
+                <div style="width: 180px; height: 85px; background-color: blue; position: absolute; opacity: 0;"><input type="file" class="" style="width: 100%; height: 100%;" onchange="getImage(event)" name="" id="file" /></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

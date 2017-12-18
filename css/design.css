@@ -1,0 +1,95 @@
+/* CSS Document */
+
+li {list-style-type: none;}
+
+.borderbar {border: 4px solid;}
+.prof_pic {width: 50px !important;}
+
+.navbar {
+    display: flex;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+}
+
+.navbar li {
+    display: inline;
+    padding: 8px 4px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 16px;
+}
+
+.navbar li a:hover {
+    background-color: rgba(0,0,0,0.375);
+    color: white;
+}
+
+.flex-right {
+    margin-left: auto;
+}
+
+.parallax {
+    position: relative;
+    height: 80%;
+
+    background-attachment: fixed;
+    background-position: center;
+    /*background-repeat: no-repeat;
+    background-size: cover;*/
+}
+
+.fixed-bottom-right {
+    position: absolute;
+    bottom: 0 !important;
+    z-index: 2;
+    display: flex;
+    margin-left: auto;
+}
+
+.edit-btn {
+    cursor: pointer;
+}
+
+.edit-btn:active {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+.editing {
+    width: 100%;
+    border: 1px dashed black;
+    padding: 8px;
+}
+
+.editable {
+    width: 100%;
+    padding: 8px;
+}
+
+.edit-btn-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    padding: 12px;
+}
+
+.edit-btn-bottom {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    padding: 12px;
+}
+
+.edit-region {
+    border: none;
+    z-index: 1;
+}

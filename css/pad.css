@@ -1,0 +1,15 @@
+@media only screen and (min-width: 641px) {
+    .T-52 {
+        padding: 52px 48px;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .T-52 {
+        padding: 52px 16px;
+    }
+}
+@media only screen and (max-width: 321px) {
+    .T-52 {
+        padding: 52px 4px;
+    }
+}

@@ -1,9 +1,36 @@
 <?php
+//session_start();
 
-include "db_connect.php";
-include "owner.php";
+function crypt_pass($user_pass, $hash=false) {
 
-session_start();
+    if($hash === false) {
+        $salt = '$2a$07$thensallysaltygoeshere$';
+        $hashed = crypt($user_pass, $salt);
+        return $hashed;
+    } else {
+        if($hash === crypt($user_pass, $hash)) {
+            return True;
+        }
+    }
+
+}
+
+function fileExists($filename) {
+    $dir = getcwd();
+    chdir('images/');
+    $files = scandir(getcwd());
+    $key = array_search($filename, $files);
+    if($key > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function getDomainName($name='OPINON') {
+    $new_name = $name;
+    return $new_name;
+}
 
 function redirect_to($new_lotion) {
     header('Location: '. $new_lotion);
@@ -104,7 +131,7 @@ function set_color($name) {
 
 function badWordFilter($text) {
 	$originals = array("'", '"');
-	$replacements = array("\'", '\"');
+	$replacements = array("\\'", '\\"');
 	$cleaned_text = str_ireplace($originals, $replacements, $text);
 	return $cleaned_text;
 }
